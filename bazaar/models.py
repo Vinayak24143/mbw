@@ -1,5 +1,5 @@
 from django.db import models
-
+from defaultPickers.models import Country, State,District,City
 def bazaarImage(instance, filename):
     return '/'.join( ['bazaar', str(instance.id), filename] )
 
@@ -69,9 +69,9 @@ class ProductSubCategory(models.Model):
 
 class Bazaar(models.Model):
     name = models.CharField(max_length=255)
-    state = models.CharField(max_length=255)
-    dist = models.CharField(max_length=255)
-    city = models.CharField(max_length=255)
+    state = models.ForeignKey(State, null=True,on_delete=models.SET_NULL)
+    dist = models.ManyToManyField(District)
+    city = models.ManyToManyField(City)
     group = models.ManyToManyField(Group)
     productCategory = models.ManyToManyField(ProductCategory)
     productSubCategory = models.ManyToManyField(ProductSubCategory)
