@@ -1,4 +1,4 @@
-from bazaar.models import Bazaar, Product, ProductCategory, ProductSubCategory, Group
+from bazaar.models import Bazaar, Product, ProductCategory, ProductSubCategory, GroupCategory
 from rest_framework import serializers
 
 class BazaarSerializer(serializers.ModelSerializer):
@@ -21,7 +21,7 @@ class ProductSubCategorySerializer(serializers.ModelSerializer):
         model = ProductSubCategory
         fields = "__all__"
 
-class BazaarGroupSerializer(serializers.ModelSerializer):
+class BazaarGroupCategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Group
+        model = GroupCategory
         fields = "__all__"

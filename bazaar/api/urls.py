@@ -9,6 +9,6 @@ urlpatterns = [
    path('products/categories/<int:pk>', ProductCategoryViewSet.as_view({'get':'retrieve', 'put':'update','delete':'destroy'})),
    path('products/subcategories', ProductSubCategoryViewSet.as_view({'get':'list','post':'create'})),
    path('products/subcategories/<int:pk>', ProductSubCategoryViewSet.as_view({'get':'retrieve', 'put':'update','delete':'destroy'})),
-   path('bazaars/groups', BazaarGroupViewSet .as_view({'get':'list','post':'create'})),
-   path('bazaars/groups/<int:pk>', BazaarGroupViewSet .as_view({'get':'retrieve', 'put':'update','delete':'destroy'})),
+   path('bazaars/groups', BazaarGroupCategoryViewSet .as_view({'get':'list','post':'create'})),
+   path('bazaars/groups/<int:pk>', BazaarGroupCategoryViewSet .as_view({'get':'retrieve', 'put':'update','delete':'destroy'})),
 ]

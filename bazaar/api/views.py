@@ -6,9 +6,9 @@ class BazaarViewSet(viewsets.ModelViewSet):
     queryset = Bazaar.objects.all()
     serializer_class = BazaarSerializer
 
-class BazaarGroupViewSet(viewsets.ModelViewSet):
-    queryset = Group.objects.all()
-    serializer_class = BazaarGroupSerializer
+class BazaarGroupCategoryViewSet(viewsets.ModelViewSet):
+    queryset = GroupCategory.objects.all()
+    serializer_class = BazaarGroupCategorySerializer
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
