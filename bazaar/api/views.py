@@ -10,7 +10,33 @@ class BazaarViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Bazaar.objects.all()
+        states = self.request.query_params.get('states')
+        districts = self.request.query_params.get('districts')
         cities = self.request.query_params.get('cities')
+
+        if states is not None:
+            try:
+                states = json.loads(states)
+                if type(states) is not list:
+                    raise exceptions.ValidationError("states query perameter must be a list of integers")
+            except json.decoder.JSONDecodeError:
+                raise exceptions.ValidationError("states query perameter must be a list of integers")
+            except:
+                pass
+
+            queryset = queryset.filter(state__id__in=states)
+
+        if districts is not None:
+            try:
+                districts = json.loads(districts)
+                if type(districts) is not list:
+                    raise exceptions.ValidationError("districts query perameter must be a list of integers")
+            except json.decoder.JSONDecodeError:
+                raise exceptions.ValidationError("districts query perameter must be a list of integers")
+            except:
+                pass
+
+            queryset = queryset.filter(dist__id__in=districts)
         
         if cities is not None:
             try:
