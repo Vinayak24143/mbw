@@ -79,13 +79,13 @@ class ProductSubCategory(models.Model):
 
 class Bazaar(models.Model):
     name = models.CharField(max_length=255)
-    state = models.ManyToManyField(State)
-    dist = models.ManyToManyField(District)
-    city = models.ManyToManyField(City)
-    group = models.ManyToManyField(GroupCategory)
-    productCategory = models.ManyToManyField(ProductCategory)
-    productSubCategory = models.ManyToManyField(ProductSubCategory)
-    product = models.ManyToManyField(Product)
+    states = models.ManyToManyField(State)
+    districts = models.ManyToManyField(District)
+    cities = models.ManyToManyField(City)
+    groupsCategoties = models.ManyToManyField(GroupCategory)
+    productCategories = models.ManyToManyField(ProductCategory)
+    productSubCategories = models.ManyToManyField(ProductSubCategory)
+    products = models.ManyToManyField(Product)
     image = models.ImageField(
         upload_to=bazaarImage,
         max_length=254, blank=True, null=True

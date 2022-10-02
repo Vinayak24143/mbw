@@ -49,7 +49,7 @@ class CityViewset(viewsets.ModelViewSet):
     serializer_class=CitySerializer
 
     def get_queryset(self):
-        queryset = District.objects.all()
+        queryset = City.objects.all()
         state = self.request.query_params.get('state')
         district = self.request.query_params.get('district')
     
