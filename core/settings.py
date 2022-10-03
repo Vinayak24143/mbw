@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'defaultPickers',
     'bazaar',
     'account',
-    'plan',    
+    'plan',
+    'kyc',
 ]
 
 MIDDLEWARE = [

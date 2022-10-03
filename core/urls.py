@@ -24,6 +24,7 @@ urlpatterns = [
     path('api/', include('defaultPickers.api.urls')),
     path('api/', include('account.api.urls')),
     path('api/', include('plan.api.urls')),
+    path('api/', include('kyc.api.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
